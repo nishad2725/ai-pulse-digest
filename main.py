@@ -164,7 +164,7 @@ def main() -> None:
         minute=minute,
         id="digest_job",
         # Fire job if process starts within 5 min of a scheduled time
-        misfire_grace_time=300,
+        misfire_grace_time=7200,  # 2 hours — fires on Mac wake even if late
         # Don't stack runs if one is still executing at next trigger
         coalesce=True,
     )
